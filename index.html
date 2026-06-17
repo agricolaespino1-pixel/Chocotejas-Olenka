@@ -57,7 +57,7 @@
         .logo-img {
             max-width: 100%;
             height: auto;
-            border-radius: 50%; /* Corte circular elegante */
+            border-radius: 50%;
             box-shadow: 0 4px 15px rgba(58, 34, 18, 0.12);
             border: 2px solid white;
             object-fit: contain;
@@ -315,7 +315,14 @@
             border: 1px solid rgba(207, 160, 155, 0.4); text-align: center; 
             margin: 15px auto; display: block; background-color: var(--fondo-casilla);
         }
-        .sales-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.85rem; border-radius: 10px; overflow: hidden; }
+        .sales-table-wrapper {
+            width: 100%;
+            overflow-x: auto; /* Permite scroll horizontal en móviles */
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .sales-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px; }
         .sales-table th, .sales-table td { padding: 12px; text-align: left; }
         .sales-table th { background-color: rgba(207, 160, 155, 0.15); color: var(--chocolate-dark); font-weight: 600; }
         .sales-table td { border-bottom: 1px solid rgba(207, 160, 155, 0.08); background-color: white; }
@@ -403,9 +410,9 @@
                 <p style="text-align:center; font-weight:600; color:var(--chocolate-dark);">Security Lock</p>
                 <input type="password" class="admin-lock-input" id="admin-pass" placeholder="Clave de seguridad">
             </div>
-            <div class="admin-data-panel" id="modal-data-zone">
+            <div class="admin-data-panel" id="modal-data-zone" style="display: none;">
                 <h3>📊 Bitácora de Ventas Globales (Cloud)</h3>
-                <div style="overflow-x:auto;">
+                <div class="sales-table-wrapper">
                     <table class="sales-table" id="tabla-registros">
                         <thead>
                             <tr>
@@ -579,7 +586,7 @@
             window.open(`https://wa.me/${TELEFONO_CLIENTE}?text=${encodeURIComponent(mensaje)}`, '_blank');
         });
 
-        // SINCRONIZACIÓN EN TIEMPO REAL NUBE
+        // CORRECCIÓN SÌNCRONIZACIÓN EN TIEMPO REAL CON LA NUBE (SOPORTE PARA MÓVILES)
         onValue(ventasRef, (snapshot) => {
             ventasDataGlobal = snapshot.val() || {};
             const tbody = document.querySelector('#tabla-registros tbody');
@@ -587,24 +594,26 @@
             
             Object.keys(ventasDataGlobal).forEach(key => {
                 const v = ventasDataGlobal[key];
-                const fila = `<tr>
-                    <td>${v.fecha}</td>
-                    <td>${v.relleno}</td>
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${v.fecha || ''}</td>
+                    <td><b>${v.relleno || ''}</b></td>
                     <td>${v.toppings || 'Ninguno'}</td>
-                    <td>${v.unidades}</td>
-                    <td>S/. ${v.total}</td>
+                    <td>${v.unidades || 0}</td>
+                    <td>S/. ${v.total || '0.00'}</td>
                     <td style="text-align:center;"><button class="btn-delete-row" data-id="${key}">🗑️</button></td>
-                </tr>`;
-                tbody.innerHTML += fila;
+                `;
+                tbody.appendChild(fila);
             });
 
+            // Reasignar los manejadores para borrar registros
             document.querySelectorAll('.btn-delete-row').forEach(btn => {
-                btn.addEventListener('click', (e) => {
+                btn.onclick = (e) => {
                     const idRegistro = e.target.getAttribute('data-id');
                     if(confirm("¿Deseas eliminar este registro de la base de datos en la nube?")) {
                         remove(ref(db, `ventas/${idRegistro}`));
                     }
-                });
+                };
             });
         });
 
@@ -640,8 +649,8 @@
 
             keys.forEach(key => {
                 const v = ventasDataGlobal[key];
-                totalUnidades += parseInt(v.unidades);
-                totalDinero += parseFloat(v.total);
+                totalUnidades += parseInt(v.unidades || 0);
+                totalDinero += parseFloat(v.total || 0);
             });
 
             let mensajeReporte = `📊 *REPORTE DIARIO DE VENTAS - CHOCOTEJAS OLENKA*\n`;
