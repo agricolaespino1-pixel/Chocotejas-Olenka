@@ -13,7 +13,6 @@
             --crema: #fffdf9;
             --texto: #2b1a0e;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--crema);
@@ -22,7 +21,6 @@
             padding: 0;
             overflow-x: hidden;
         }
-
         header {
             background-color: white;
             padding: 20px;
@@ -30,7 +28,6 @@
             box-shadow: 0 4px 20px rgba(58, 31, 11, 0.05);
             border-bottom: 3px solid var(--rosa-pastel);
         }
-
         .logo-title {
             font-family: 'Georgia', serif;
             font-size: 2.5rem;
@@ -39,7 +36,6 @@
             letter-spacing: 2px;
             font-weight: 400;
         }
-
         .logo-subtitle {
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -47,7 +43,6 @@
             color: var(--chocolate-light);
             margin-top: 5px;
         }
-
         .story-badge {
             background-color: var(--rosa-soft);
             color: var(--chocolate-light);
@@ -59,14 +54,12 @@
             margin-top: 10px;
             border: 1px solid var(--rosa-pastel);
         }
-
         .container {
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
             text-align: center;
         }
-
         .pricing-card {
             background-color: white;
             border-radius: 15px;
@@ -76,10 +69,9 @@
             margin-bottom: 30px;
             display: inline-block;
         }
-
         .pricing-card p { margin: 5px 0; font-size: 1.1rem; }
         .pricing-card .offer { color: #b33939; font-weight: bold; }
-
+        
         .btn-random {
             background-color: transparent;
             color: var(--chocolate-dark);
@@ -92,20 +84,18 @@
             font-weight: 600;
             margin-bottom: 25px;
         }
-
         .btn-random:hover { background-color: var(--chocolate-dark); color: white; }
 
-        /* Zona de Ingredientes Flotantes */
+        /* Zona de Ingredientes Flotantes Mágica */
         .floating-zone {
             width: 100%;
-            height: 180px;
+            height: 250px;
             position: relative;
             margin-bottom: 30px;
             background: rgba(243, 193, 198, 0.1);
             border-radius: 20px;
             border: 1px dashed var(--rosa-pastel);
         }
-
         .ingredient {
             position: absolute;
             background: white;
@@ -119,14 +109,14 @@
             transition: all 0.3s ease;
             user-select: none;
         }
-
         .ingredient:hover { transform: scale(1.05) translateY(-3px) !important; border-color: var(--chocolate-dark); }
         .ingredient.selected { background-color: var(--rosa-pastel); color: var(--chocolate-dark); border-color: var(--chocolate-dark); font-weight: bold; }
 
-        @keyframes floatSmooth1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-        @keyframes floatSmooth2 { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
+        @keyframes floatSmooth1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+        @keyframes floatSmooth2 { 0%, 100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
+        @keyframes floatSmooth3 { 0%, 100% { transform: translateY(4px); } 50% { transform: translateY(-8px); } }
 
-        /* Estructura Chocoteja */
+        /* Estructura Chocoteja Visual */
         .chocoteja-display-container {
             display: flex;
             flex-direction: column;
@@ -135,10 +125,9 @@
             position: relative;
             max-width: 320px;
         }
-
         .topping-layer-visual { min-height: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 8px; width: 100%; }
         .topping-badge-visual { background: #fff; border: 1px solid var(--chocolate-light); color: var(--chocolate-dark); font-size: 0.8rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05); animation: fadeIn 0.3s ease; }
-
+        
         .chocoteja-target {
             width: 240px;
             height: 140px;
@@ -152,11 +141,10 @@
             position: relative;
             border: 1px solid #241306;
         }
-
         .chocoteja-target.bounce { transform: scale(1.06); }
         .relleno-layer-visual { background: rgba(255, 255, 255, 0.95); border: 2px dashed var(--chocolate-light); padding: 8px 15px; border-radius: 12px; max-width: 80%; text-align: center; color: var(--chocolate-dark); font-size: 0.85rem; font-weight: bold; animation: fadeIn 0.3s ease; }
-        .chocoteja-placeholder-text { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; }
-
+        .chocoteja-placeholder-text { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; text-align: center; padding: 0 10px; }
+        
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
         /* Panel de Control */
@@ -169,12 +157,11 @@
             box-shadow: 0 4px 25px rgba(0,0,0,0.02);
             border: 1px solid rgba(0,0,0,0.05);
         }
-
         .quantity-control { margin: 15px 0; font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 10px; }
         .quantity-control input { width: 60px; padding: 8px; font-size: 1rem; text-align: center; border: 1px solid #ccc; border-radius: 8px; }
         .total-price { font-size: 1.5rem; font-weight: bold; color: var(--chocolate-dark); }
         .discount-alert { color: #27ae60; font-size: 0.85rem; margin-top: 5px; font-weight: 600; height: 18px; }
-
+        
         .whatsapp-btn {
             display: none;
             background-color: #25d366;
@@ -185,23 +172,11 @@
             font-weight: 600;
             text-decoration: none;
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            display: inline-block;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
         }
 
-        /* Botón discreto en el footer */
-        .footer-admin-trigger {
-            background: transparent;
-            color: rgba(161, 136, 127, 0.4);
-            border: none;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .footer-admin-trigger:hover { color: var(--chocolate-light); }
-
-        /* Estilos Ventana Flotante Modal */
+        /* Modal Admin */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -212,7 +187,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .modal-content {
             background: white;
             padding: 30px;
@@ -224,16 +198,14 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             position: relative;
         }
-
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #888; }
         .admin-lock-input { width: 200px; padding: 10px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc; text-align: center; margin: 15px auto; display: block; }
         .admin-data-panel { display: none; text-align: left; }
         .admin-data-panel h3 { color: var(--chocolate-dark); font-family: 'Georgia', serif; margin-top: 0; }
-
         .sales-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
         .sales-table th, .sales-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
         .sales-table th { background-color: var(--rosa-soft); color: var(--chocolate-dark); }
-
+        
         .btn-action-admin {
             background-color: var(--chocolate-light); color: white; border: none;
             padding: 10px 18px; border-radius: 50px; cursor: pointer; font-weight: 600;
@@ -241,8 +213,10 @@
         }
         .btn-wa-report { background-color: #25d366; }
         .btn-delete-row { background: transparent; color: #e74c3c; border: none; cursor: pointer; font-size: 1.1rem; }
-
+        
         footer { margin-top: 60px; padding: 20px; font-size: 0.85rem; color: #a1887f; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-admin-trigger { background: transparent; color: rgba(161, 136, 127, 0.4); border: none; font-size: 0.8rem; cursor: pointer; transition: color 0.3s; }
+        .footer-admin-trigger:hover { color: var(--chocolate-light); }
     </style>
 </head>
 <body>
@@ -265,21 +239,21 @@
 
         <div class="floating-zone">
             <div class="ingredient" style="left: 5%; top: 20px; animation: floatSmooth1 4s infinite;" data-type="Relleno" data-name="Manjar Blanco">🍯 Manjar Blanco</div>
-            <div class="ingredient" style="left: 35%; top: 40px; animation: floatSmooth2 4.5s infinite;" data-type="Relleno" data-name="Fudge de Chocolate">🍫 Fudge Puro</div>
-            <div class="ingredient" style="left: 68%; top: 15px; animation: floatSmooth1 3.8s infinite;" data-type="Relleno" data-name="Crema de Coco">🥥 Crema de Coco</div>
-            <div class="ingredient" style="left: 12%; top: 120px; animation: floatSmooth2 4.2s infinite;" data-type="Relleno" data-name="Nutella">🌰 Nutella</div>
+            <div class="ingredient" style="left: 38%; top: 15px; animation: floatSmooth2 4.5s infinite;" data-type="Relleno" data-name="Nutella">🌰 Nutella</div>
+            <div class="ingredient" style="left: 70%; top: 25px; animation: floatSmooth3 3.8s infinite;" data-type="Relleno" data-name="Mermelada">🍓 Mermelada</div>
             
-            <div class="ingredient" style="left: 42%; top: 125px; animation: floatSmooth1 5s infinite;" data-type="Topping" data-name="Pecanas Finas">🥜 Pecanas Finas</div>
-            <div class="ingredient" style="left: 74%; top: 110px; animation: floatSmooth2 4.1s infinite;" data-type="Topping" data-name="Chinchines">🌈 Chinchines</div>
-            <div class="ingredient" style="left: 22%; top: 75px; animation: floatSmooth1 4.6s infinite;" data-type="Topping" data-name="Galleta Oreo">🍪 Galleta Oreo</div>
-            <div class="ingredient" style="left: 82%; top: 65px; animation: floatSmooth2 3.9s infinite;" data-type="Topping" data-name="Gomitas">🧸 Gomitas</div>
+            <div class="ingredient" style="left: 12%; top: 110px; animation: floatSmooth2 4.2s infinite;" data-type="Topping" data-name="Pecanas">🥜 Pecanas Finas</div>
+            <div class="ingredient" style="left: 44%; top: 105px; animation: floatSmooth1 4.9s infinite;" data-type="Topping" data-name="Maní">🥜 Maní</div>
+            <div class="ingredient" style="left: 74%; top: 120px; animation: floatSmooth3 4.1s infinite;" data-type="Topping" data-name="Pasas">🍇 Pasas</div>
+            <div class="ingredient" style="left: 26%; top: 185px; animation: floatSmooth1 4.6s infinite;" data-type="Topping" data-name="Limón">🍋 Limón</div>
+            <div class="ingredient" style="left: 60%; top: 175px; animation: floatSmooth2 3.9s infinite;" data-type="Topping" data-name="Guindón">🍒 Guindón</div>
         </div>
 
         <div class="chocoteja-display-container">
             <div class="topping-layer-visual" id="topping-layer"></div>
             <div class="chocoteja-target" id="chocoteja">
                 <div id="chocoteja-content">
-                    <span class="chocoteja-placeholder-text">DISEÑA TU CHOCOTEJA</span>
+                    <span class="chocoteja-placeholder-text">¡TOCA LOS INGREDIENTES FLOTANTES PARA RELLENAR TU CHOCOTEJA!</span>
                 </div>
             </div>
         </div>
@@ -294,21 +268,17 @@
         </div>
 
         <div style="min-height: 60px;">
-            <button class="whatsapp-btn" id="whatsapp-btn">
-                ✉️ Confirmar Diseño y Pedir por WhatsApp
-            </button>
+            <button class="whatsapp-btn" id="whatsapp-btn">✉️ Confirmar Diseño y Pedir por WhatsApp</button>
         </div>
     </div>
 
     <div class="modal-overlay" id="admin-modal">
         <div class="modal-content">
             <span class="close-modal" id="close-modal-btn">&times;</span>
-            
             <div id="modal-auth-zone">
                 <p style="text-align:center; font-weight:600; color:var(--chocolate-dark);">Seguridad del Sistema</p>
                 <input type="password" class="admin-lock-input" id="admin-pass" placeholder="Clave de seguridad">
             </div>
-
             <div class="admin-data-panel" id="modal-data-zone">
                 <h3>📊 Bitácora de Ventas Globales (Cloud)</h3>
                 <div style="overflow-x:auto;">
@@ -317,7 +287,7 @@
                             <tr>
                                 <th>Fecha</th>
                                 <th>Relleno</th>
-                                <th>Toppings</th>
+                                <th>Acompañamiento</th>
                                 <th>Uds</th>
                                 <th>Total</th>
                                 <th style="text-align:center;">Acción</th>
@@ -340,7 +310,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-        // CONFIGURACIÓN DE TU CUENTA REAL DE FIREBASE DE TU CAPTURA
         const firebaseConfig = {
             apiKey: "AIzaSyB52zYE5J5R7ew_fapNbw6rGK1CX4ZxGoI",
             authDomain: "chocotejas-olenka.firebaseapp.com",
@@ -349,18 +318,17 @@
             messagingSenderId: "61202358109",
             appId: "1:61202358109:web:8ba5e358a4e02dbdc792b4",
             measurementId: "G-TBGF4HMPFY",
-            databaseURL: "https://chocotejas-olenka-default-rtdb.firebaseio.com" // Generada automáticamente para tu proyecto
+            databaseURL: "https://chocotejas-olenka-default-rtdb.firebaseio.com"
         };
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const ventasRef = ref(db, 'ventas');
 
-        const TELEFONO_CLIENTE = "51914450843"; // Tu número para recibir compras
-        const TELEFONO_REPORTE = "51914450843"; // Número oficial solicitado para reportes
-        const CLAVE_ADMIN = "onipse2512";
+        const TELEFONO_CLIENTE = "51914450843"; 
+        const TELEFONO_REPORTE = "51914450843"; 
+        const CLAVE_ADMIN = "Espino2512";
 
-        const ingredients = document.querySelectorAll('.ingredient');
         const chocoteja = document.getElementById('chocoteja');
         const chocotejaContent = document.getElementById('chocoteja-content');
         const toppingLayer = document.getElementById('topping-layer');
@@ -370,35 +338,51 @@
         const whatsappBtn = document.getElementById('whatsapp-btn');
         const btnRandom = document.getElementById('btn-random');
 
-        let pedido = { rellenos: [], toppings: [] };
+        let pedido = { relleno: "", toppings: [] };
         let ventasDataGlobal = {};
 
-        ingredients.forEach(item => {
+        // MANEJO CLIC INGREDIENTES FLOTANTES
+        document.querySelectorAll('.ingredient').forEach(item => {
             item.addEventListener('click', () => {
                 const type = item.getAttribute('data-type');
                 const name = item.getAttribute('data-name');
-                if (item.classList.contains('selected')) {
-                    item.classList.remove('selected');
-                    if (type === 'Relleno') pedido.rellenos = pedido.rellenos.filter(r => r !== name);
-                    else pedido.toppings = pedido.toppings.filter(t => t !== name);
-                } else {
+
+                if (type === 'Relleno') {
+                    // Obligatorio uno solo: desmarcar otros rellenos flotantes
+                    document.querySelectorAll('.ingredient[data-type="Relleno"]').forEach(r => r.classList.remove('selected'));
                     item.classList.add('selected');
-                    if (type === 'Relleno') pedido.rellenos.push(name);
-                    else pedido.toppings.push(name);
+                    pedido.relleno = name;
+                } else {
+                    // Múltiples acompañamientos permitidos
+                    if (item.classList.contains('selected')) {
+                        item.classList.remove('selected');
+                        pedido.toppings = pedido.toppings.filter(t => t !== name);
+                    } else {
+                        item.classList.add('selected');
+                        pedido.toppings.push(name);
+                    }
                 }
                 animarYActualizarChocoteja();
             });
         });
 
+        // GENERADOR DE COMBO ALEATORIO DE AUTOR
         btnRandom.addEventListener('click', () => {
-            pedido.rellenos = []; pedido.toppings = [];
-            ingredients.forEach(item => item.classList.remove('selected'));
-            const rellenos = Array.from(ingredients).filter(i => i.getAttribute('data-type') === 'Relleno');
-            const toppings = Array.from(ingredients).filter(i => i.getAttribute('data-type') === 'Topping');
+            pedido.toppings = [];
+            document.querySelectorAll('.ingredient').forEach(item => item.classList.remove('selected'));
+
+            const rellenos = document.querySelectorAll('.ingredient[data-type="Relleno"]');
+            const toppings = document.querySelectorAll('.ingredient[data-type="Topping"]');
+
             const rSelected = rellenos[Math.floor(Math.random() * rellenos.length)];
             const tSelected = toppings[Math.floor(Math.random() * toppings.length)];
-            rSelected.classList.add('selected'); pedido.rellenos.push(rSelected.getAttribute('data-name'));
-            tSelected.classList.add('selected'); pedido.toppings.push(tSelected.getAttribute('data-name'));
+
+            rSelected.classList.add('selected'); 
+            pedido.relleno = rSelected.getAttribute('data-name');
+
+            tSelected.classList.add('selected'); 
+            pedido.toppings.push(tSelected.getAttribute('data-name'));
+
             animarYActualizarChocoteja();
         });
 
@@ -407,11 +391,13 @@
         function animarYActualizarChocoteja() {
             chocoteja.classList.add('bounce');
             setTimeout(() => chocoteja.classList.remove('bounce'), 200);
-            if (pedido.rellenos.length > 0) {
-                chocotejaContent.innerHTML = `<div class="relleno-layer-visual">❤️ Relleno: ${pedido.rellenos.join(' + ')}</div>`;
+
+            if (pedido.relleno) {
+                chocotejaContent.innerHTML = `<div class="relleno-layer-visual">❤️ Relleno: ${pedido.relleno}</div>`;
             } else {
-                chocotejaContent.innerHTML = `<span class="chocoteja-placeholder-text">DISEÑA TU CHOCOTEJA</span>`;
+                chocotejaContent.innerHTML = `<span class="chocoteja-placeholder-text">¡TOCA LOS INGREDIENTES FLOTANTES PARA RELLENAR TU CHOCOTEJA!</span>`;
             }
+
             toppingLayer.innerHTML = '';
             pedido.toppings.forEach(top => {
                 const badge = document.createElement('div');
@@ -419,51 +405,56 @@
                 badge.innerText = `✨ ${top}`;
                 toppingLayer.appendChild(badge);
             });
+
             calcularCostos();
         }
 
         function calcularCostos() {
             const cantidad = parseInt(quantityInput.value) || 1;
-            if (pedido.rellenos.length === 0 && pedido.toppings.length === 0) {
+
+            // Restricción: Si no ha seleccionado un relleno flotante, no permite ordenar
+            if (!pedido.relleno) {
                 priceDisplay.innerHTML = "Total: S/. 0.00";
-                discountAlert.innerHTML = "";
+                discountAlert.innerHTML = "⚠️ ¡Por favor elige un relleno base flotante!";
                 whatsappBtn.style.display = 'none';
                 return { total: 0 };
             }
+
             let precioUnitario = cantidad >= 12 ? 1.50 : 2.00;
             discountAlert.innerHTML = cantidad >= 12 ? "✓ Tarifa por docena aplicada (S/. 1.50 c/u)" : `Agrega ${12 - cantidad} más para precio docena`;
+
             let total = cantidad * precioUnitario;
             priceDisplay.innerHTML = `Total estimado: S/. ${total.toFixed(2)}`;
             whatsappBtn.style.display = 'inline-block';
+
             return { total };
         }
 
-        // ENVIAR COMPRA AL SERVER NUBE (FIREBASE) Y REDIRECCIÓN
+        // DISPARO COMPRA FIREBASE Y RE-DIRECCIÓN WHATSAPP
         whatsappBtn.addEventListener('click', () => {
             const datosFinancieros = calcularCostos();
             const cantidad = parseInt(quantityInput.value) || 1;
             
             const nuevaVenta = {
                 fecha: new Date().toLocaleDateString(),
-                relleno: pedido.rellenos.join(' + ') || 'Ninguno',
+                relleno: pedido.relleno,
                 toppings: pedido.toppings.join(' + ') || 'Ninguno',
                 unidades: cantidad,
                 total: datosFinancieros.total.toFixed(2)
             };
             
-            // Subida inmediata a Firebase 🚀
             push(ventasRef, nuevaVenta);
 
             let mensaje = `Estimado equipo de *Chocotejas Olenka*,\n\nDeseo realizar un pedido:\n`;
             mensaje += `• *Cantidad:* ${cantidad} unidades\n`;
-            mensaje += `• *Rellenos:* ${nuevaVenta.relleno}\n`;
-            mensaje += `• *Toppings:* ${nuevaVenta.toppings}\n\n`;
+            mensaje += `• *Relleno Base:* ${nuevaVenta.relleno}\n`;
+            mensaje += `• *Acompañamiento:* ${nuevaVenta.toppings}\n\n`;
             mensaje += `*Total a pagar:* S/. ${nuevaVenta.total}\n\n¡Muchas gracias!`;
 
             window.open(`https://wa.me/${TELEFONO_CLIENTE}?text=${encodeURIComponent(mensaje)}`, '_blank');
         });
 
-        // ESCUCHA AUTOMÁTICA EN TIEMPO REAL DESDE LA NUBE
+        // SINCRONIZACIÓN EN TIEMPO REAL DESDE LA NUBE
         onValue(ventasRef, (snapshot) => {
             ventasDataGlobal = snapshot.val() || {};
             const tbody = document.querySelector('#tabla-registros tbody');
@@ -482,7 +473,6 @@
                 tbody.innerHTML += fila;
             });
 
-            // Asignar eventos de eliminación individual
             document.querySelectorAll('.btn-delete-row').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const idRegistro = e.target.getAttribute('data-id');
@@ -493,13 +483,12 @@
             });
         });
 
-        // COMPORTAMIENTO MODAL ADMIN
+        // MODAL PANEL DE ADMINISTRADOR
         document.getElementById('open-admin-btn').addEventListener('click', () => {
             document.getElementById('admin-modal').style.display = 'flex';
         });
-
         document.getElementById('close-modal-btn').addEventListener('click', cerrarPanelAdmin);
-
+        
         document.getElementById('admin-pass').addEventListener('input', (e) => {
             if (e.target.value === CLAVE_ADMIN) {
                 document.getElementById('modal-auth-zone').style.display = 'none';
@@ -514,7 +503,7 @@
             document.getElementById('modal-auth-zone').style.display = 'block';
         }
 
-        // ENVIAR REPORTE DIARIO POR WHATSAPP
+        // ENVIAR REPORTE DEL DÍA POR WHATSAPP
         document.getElementById('btn-send-report').addEventListener('click', () => {
             const keys = Object.keys(ventasDataGlobal);
             if(keys.length === 0) return alert("No hay datos en la nube para reportar hoy.");
@@ -540,15 +529,17 @@
             window.open(`https://wa.me/${TELEFONO_REPORTE}?text=${encodeURIComponent(mensajeReporte)}`, '_blank');
         });
 
-        // EXPORTACIÓN EXCEL
+        // EXPORTACIÓN A EXCEL (CSV)
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             const keys = Object.keys(ventasDataGlobal);
             if(keys.length === 0) return alert("No hay datos para exportar.");
-            let csvContent = "data:text/csv;charset=utf-8,Fecha,Relleno,Toppings,Unidades,Total (S/.)\n";
+
+            let csvContent = "data:text/csv;charset=utf-8,Fecha,Relleno,Acompanamiento,Unidades,Total (S/.)\n";
             keys.forEach(key => { 
                 const v = ventasDataGlobal[key];
                 csvContent += `${v.fecha},${v.relleno},${v.toppings},${v.unidades},${v.total}\n`; 
             });
+
             const encodedUri = encodeURI(csvContent);
             const link = document.createElement("a");
             link.setAttribute("href", encodedUri);
@@ -559,4 +550,4 @@
         });
     </script>
 </body>
-</html>k
+</html>
