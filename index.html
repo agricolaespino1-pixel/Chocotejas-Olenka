@@ -6,183 +6,287 @@
     <title>Chocotejas Olenka - Boutique de Chocolates</title>
     <style>
         :root {
-            --chocolate-dark: #3a1f0b;
-            --chocolate-light: #6d4322;
-            --rosa-pastel: #f3c1c6;
-            --rosa-soft: #fbf0f1;
-            --crema: #fffdf9;
-            --texto: #2b1a0e;
+            --chocolate-dark: #3a2212;
+            --chocolate-light: #5c3a21;
+            --oro-rose: #cfa09b;
+            --rosa-premium: #f3cbd2;
+            --rosa-soft: #fdf8f8;
+            --fondo-casilla: #faf6f5; 
+            --texto: #332219;
+            --sombra-elegante: 0 8px 24px rgba(92, 58, 33, 0.05), 0 2px 6px rgba(0, 0, 0, 0.01);
+            --sombra-resaltada: 0 12px 25px rgba(207, 160, 155, 0.35);
+            --sombra-profunda: 0 16px 35px rgba(0, 0, 0, 0.08);
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--crema);
+            background-color: #f7f1ee;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(92, 58, 33, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(207, 160, 155, 0.15) 0%, transparent 60%),
+                linear-gradient(180deg, #fdfaf9 0%, #ede3df 100%);
+            background-attachment: fixed;
             color: var(--texto);
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
         header {
-            background-color: white;
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(58, 31, 11, 0.05);
-            border-bottom: 3px solid var(--rosa-pastel);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(207, 160, 155, 0.2);
         }
+        
+        /* LOGO OFICIAL INTEGRADO */
+        .logo-container {
+            max-width: 130px;
+            margin: 0 auto 12px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%; /* Corte circular elegante */
+            box-shadow: 0 4px 15px rgba(58, 34, 18, 0.12);
+            border: 2px solid white;
+            object-fit: contain;
+        }
+
         .logo-title {
-            font-family: 'Georgia', serif;
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.4rem;
             color: var(--chocolate-dark);
             margin: 0;
             letter-spacing: 2px;
-            font-weight: 400;
+            font-weight: 300;
+            font-style: italic;
         }
         .logo-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: var(--chocolate-light);
-            margin-top: 5px;
+            margin-top: 6px;
+            font-weight: 600;
+            opacity: 0.8;
         }
         .story-badge {
-            background-color: var(--rosa-soft);
+            background-color: #ffffff;
             color: var(--chocolate-light);
             display: inline-block;
-            padding: 6px 15px;
+            padding: 6px 18px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-top: 10px;
-            border: 1px solid var(--rosa-pastel);
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(207, 160, 155, 0.3);
         }
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 850px;
+            margin: 30px auto;
             padding: 0 20px;
             text-align: center;
         }
         .pricing-card {
-            background-color: white;
-            border-radius: 15px;
-            padding: 15px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid rgba(109, 67, 34, 0.1);
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 18px 30px;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             margin-bottom: 30px;
             display: inline-block;
         }
-        .pricing-card p { margin: 5px 0; font-size: 1.1rem; }
-        .pricing-card .offer { color: #b33939; font-weight: bold; }
+        .pricing-card p { margin: 4px 0; font-size: 1rem; letter-spacing: 0.3px; }
+        .pricing-card span { color: var(--chocolate-dark); font-weight: 600; }
+        .pricing-card .offer { color: #b04141; font-weight: 600; font-size: 1.05rem; }
         
         .btn-random {
-            background-color: transparent;
+            background-color: #ffffff;
             color: var(--chocolate-dark);
-            border: 2px solid var(--chocolate-dark);
-            padding: 10px 25px;
-            font-size: 0.95rem;
+            border: 1px solid var(--oro-rose);
+            padding: 12px 28px;
+            font-size: 0.85rem;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: var(--sombra-elegante);
             margin-bottom: 25px;
         }
-        .btn-random:hover { background-color: var(--chocolate-dark); color: white; }
+        .btn-random:hover { 
+            transform: translateY(-1px);
+            box-shadow: 0 10px 20px rgba(207, 160, 155, 0.2);
+            background-color: var(--chocolate-dark); 
+            color: #ffffff;
+            border-color: var(--chocolate-dark);
+        }
 
-        /* Zona de Ingredientes Flotantes Mágica */
+        /* Zona de Ingredientes Flotantes */
         .floating-zone {
             width: 100%;
             height: 250px;
             position: relative;
             margin-bottom: 30px;
-            background: rgba(243, 193, 198, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
             border-radius: 20px;
-            border: 1px dashed var(--rosa-pastel);
+            box-shadow: var(--sombra-profunda);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
         .ingredient {
             position: absolute;
-            background: white;
-            color: var(--chocolate-dark);
-            padding: 8px 18px;
+            background: #ffffff;
+            color: var(--texto);
+            padding: 10px 20px;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid rgba(109, 67, 34, 0.15);
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(207, 160, 155, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             user-select: none;
         }
-        .ingredient:hover { transform: scale(1.05) translateY(-3px) !important; border-color: var(--chocolate-dark); }
-        .ingredient.selected { background-color: var(--rosa-pastel); color: var(--chocolate-dark); border-color: var(--chocolate-dark); font-weight: bold; }
+        .ingredient:hover { 
+            transform: translateY(-3px) !important; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+        }
+        
+        .ingredient.selected { 
+            background-color: #ffffff;
+            color: var(--chocolate-dark); 
+            border: 2px solid var(--oro-rose); 
+            font-weight: 700;
+            font-size: 1.05rem; 
+            padding: 13px 28px; 
+            box-shadow: var(--sombra-resaltada);
+            z-index: 10;
+            animation: popCheck 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        @keyframes floatSmooth1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
-        @keyframes floatSmooth2 { 0%, 100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
-        @keyframes floatSmooth3 { 0%, 100% { transform: translateY(4px); } 50% { transform: translateY(-8px); } }
+        @keyframes popCheck {
+            0% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes floatSmooth1 { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes floatSmooth2 { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
+        @keyframes floatSmooth3 { 0%, 100% { transform: translateY(3px); } 50% { transform: translateY(-6px); } }
 
         /* Estructura Chocoteja Visual */
         .chocoteja-display-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 40px auto;
-            position: relative;
+            margin: 35px auto;
             max-width: 320px;
         }
-        .topping-layer-visual { min-height: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 8px; width: 100%; }
-        .topping-badge-visual { background: #fff; border: 1px solid var(--chocolate-light); color: var(--chocolate-dark); font-size: 0.8rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.05); animation: fadeIn 0.3s ease; }
+        .topping-layer-visual { min-height: 35px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 12px; width: 100%; }
+        .topping-badge-visual { 
+            background: #ffffff; 
+            border: 1px solid var(--oro-rose); 
+            color: var(--chocolate-dark); 
+            font-size: 0.75rem; 
+            padding: 4px 14px; 
+            border-radius: 20px; 
+            font-weight: 600; 
+            box-shadow: var(--sombra-elegante);
+        }
         
         .chocoteja-target {
             width: 240px;
             height: 140px;
-            background: radial-gradient(circle at 35% 35%, #6d4322, var(--chocolate-dark) 85%);
-            border-radius: 120px / 70px;
-            box-shadow: 0 15px 35px rgba(58, 31, 11, 0.25);
+            background: radial-gradient(circle at 35% 35%, #5c351a, #241105 95%);
+            border-radius: 120px / 72px;
+            box-shadow: 0 15px 35px rgba(58, 34, 18, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.2s ease;
-            position: relative;
-            border: 1px solid #241306;
+            border: 1px solid #1c0d04;
         }
-        .chocoteja-target.bounce { transform: scale(1.06); }
-        .relleno-layer-visual { background: rgba(255, 255, 255, 0.95); border: 2px dashed var(--chocolate-light); padding: 8px 15px; border-radius: 12px; max-width: 80%; text-align: center; color: var(--chocolate-dark); font-size: 0.85rem; font-weight: bold; animation: fadeIn 0.3s ease; }
-        .chocoteja-placeholder-text { color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; text-align: center; padding: 0 10px; }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .chocoteja-target.bounce { transform: scale(1.05); }
+        .relleno-layer-visual { 
+            background: #ffffff; 
+            border: 1px solid var(--oro-rose); 
+            padding: 8px 18px; 
+            border-radius: 12px; 
+            max-width: 80%; 
+            text-align: center; 
+            color: var(--chocolate-dark); 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .chocoteja-placeholder-text { 
+            color: rgba(255, 255, 255, 0.4); 
+            font-size: 0.7rem; 
+            letter-spacing: 2px; 
+            font-weight: 600; 
+            text-align: center; 
+            padding: 0 15px; 
+            line-height: 1.4;
+        }
 
-        /* Panel de Control */
+        /* Panel de Control Ordenado */
         .summary-box {
-            background-color: white;
+            background-color: var(--fondo-casilla); 
+            color: var(--texto);
             padding: 25px;
-            border-radius: 15px;
-            max-width: 550px;
+            border-radius: 20px;
+            max-width: 500px;
             margin: 0 auto 30px auto;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
-        .quantity-control { margin: 15px 0; font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 10px; }
-        .quantity-control input { width: 60px; padding: 8px; font-size: 1rem; text-align: center; border: 1px solid #ccc; border-radius: 8px; }
-        .total-price { font-size: 1.5rem; font-weight: bold; color: var(--chocolate-dark); }
-        .discount-alert { color: #27ae60; font-size: 0.85rem; margin-top: 5px; font-weight: 600; height: 18px; }
+        .quantity-control { margin: 12px 0; font-size: 0.95rem; display: flex; justify-content: center; align-items: center; gap: 10px; font-weight: 600; color: var(--chocolate-dark); }
+        .quantity-control input { 
+            width: 65px; 
+            padding: 6px; 
+            font-size: 1rem; 
+            text-align: center; 
+            border: 1px solid rgba(207, 160, 155, 0.4); 
+            border-radius: 10px; 
+            background-color: #ffffff;
+            color: var(--chocolate-dark);
+            font-weight: 600;
+            outline: none;
+        }
+        .total-price { font-size: 1.5rem; font-weight: 400; color: var(--chocolate-dark); font-family: 'Georgia', serif; }
+        .discount-alert { color: #3b7a57; font-size: 0.85rem; margin-top: 6px; font-weight: 600; height: 16px; }
         
         .whatsapp-btn {
             display: none;
-            background-color: #25d366;
+            background: linear-gradient(135deg, #2cd66b 0%, #1c9c49 100%);
             color: white;
             padding: 14px 40px;
             border-radius: 50px;
-            font-size: 1.05rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 20px rgba(28, 156, 73, 0.2);
             border: none;
             cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
         }
+        .whatsapp-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 25px rgba(28, 156, 73, 0.3); }
 
         /* Modal Admin */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(58, 34, 18, 0.2);
+            backdrop-filter: blur(5px);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -190,38 +294,51 @@
         .modal-content {
             background: white;
             padding: 30px;
-            border-radius: 16px;
-            max-width: 800px;
+            border-radius: 20px;
+            max-width: 750px;
             width: 90%;
-            max-height: 85vh;
+            max-height: 80vh;
             overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: var(--sombra-profunda);
             position: relative;
         }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: #888; }
-        .admin-lock-input { width: 200px; padding: 10px; font-size: 1rem; border-radius: 8px; border: 1px solid #ccc; text-align: center; margin: 15px auto; display: block; }
-        .admin-data-panel { display: none; text-align: left; }
-        .admin-data-panel h3 { color: var(--chocolate-dark); font-family: 'Georgia', serif; margin-top: 0; }
-        .sales-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
-        .sales-table th, .sales-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
-        .sales-table th { background-color: var(--rosa-soft); color: var(--chocolate-dark); }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.4rem; cursor: pointer; color: #bbb; }
+        .admin-lock-input { 
+            width: 200px; padding: 10px; font-size: 0.95rem; border-radius: 10px; 
+            border: 1px solid rgba(207, 160, 155, 0.4); text-align: center; 
+            margin: 15px auto; display: block; background-color: var(--fondo-casilla);
+        }
+        .sales-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.85rem; border-radius: 10px; overflow: hidden; }
+        .sales-table th, .sales-table td { padding: 12px; text-align: left; }
+        .sales-table th { background-color: rgba(207, 160, 155, 0.15); color: var(--chocolate-dark); font-weight: 600; }
+        .sales-table td { border-bottom: 1px solid rgba(207, 160, 155, 0.08); background-color: white; }
         
         .btn-action-admin {
             background-color: var(--chocolate-light); color: white; border: none;
-            padding: 10px 18px; border-radius: 50px; cursor: pointer; font-weight: 600;
-            font-size: 0.85rem; margin-top: 15px; margin-right: 10px;
+            padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: 600;
+            font-size: 0.8rem; margin-top: 15px; margin-right: 10px; transition: all 0.3s;
         }
-        .btn-wa-report { background-color: #25d366; }
-        .btn-delete-row { background: transparent; color: #e74c3c; border: none; cursor: pointer; font-size: 1.1rem; }
+        .btn-wa-report { background: linear-gradient(135deg, #25d366 0%, #1da84f 100%); }
+        .btn-delete-row { background: transparent; color: #e74c3c; border: none; cursor: pointer; font-size: 1rem; }
         
-        footer { margin-top: 60px; padding: 20px; font-size: 0.85rem; color: #a1887f; border-top: 1px solid rgba(0,0,0,0.05); }
-        .footer-admin-trigger { background: transparent; color: rgba(161, 136, 127, 0.4); border: none; font-size: 0.8rem; cursor: pointer; transition: color 0.3s; }
-        .footer-admin-trigger:hover { color: var(--chocolate-light); }
+        footer { 
+            margin-top: 60px; 
+            padding: 25px 20px; 
+            font-size: 0.8rem; 
+            color: var(--chocolate-light); 
+            opacity: 0.7;
+            border-top: 1px solid rgba(207, 160, 155, 0.15); 
+            letter-spacing: 0.3px;
+        }
+        .footer-admin-trigger { background: transparent; color: var(--chocolate-light); border: none; font-size: 0.8rem; cursor: pointer; font-weight: 600; text-decoration: underline; }
     </style>
 </head>
 <body>
-
     <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/gZNBx10d/FB-IMG-1781703399937.jpg" alt="Logo Chocotejas Olenka" class="logo-img">
+        </div>
+
         <h1 class="logo-title">Chocotejas Olenka</h1>
         <div class="logo-subtitle">Alta Chocolatería Artesanal</div>
         <div class="story-badge">🌸 Un dulce emprendimiento liderado con amor</div>
@@ -238,15 +355,15 @@
         </div>
 
         <div class="floating-zone">
-            <div class="ingredient" style="left: 5%; top: 20px; animation: floatSmooth1 4s infinite;" data-type="Relleno" data-name="Manjar Blanco">🍯 Manjar Blanco</div>
+            <div class="ingredient" style="left: 4%; top: 20px; animation: floatSmooth1 4s infinite;" data-type="Relleno" data-name="Manjar Blanco">🍯 Manjar Blanco</div>
             <div class="ingredient" style="left: 38%; top: 15px; animation: floatSmooth2 4.5s infinite;" data-type="Relleno" data-name="Nutella">🌰 Nutella</div>
-            <div class="ingredient" style="left: 70%; top: 25px; animation: floatSmooth3 3.8s infinite;" data-type="Relleno" data-name="Mermelada">🍓 Mermelada</div>
+            <div class="ingredient" style="left: 68%; top: 25px; animation: floatSmooth3 3.8s infinite;" data-type="Relleno" data-name="Mermelada">🍓 Mermelada</div>
             
-            <div class="ingredient" style="left: 12%; top: 110px; animation: floatSmooth2 4.2s infinite;" data-type="Topping" data-name="Pecanas">🥜 Pecanas Finas</div>
+            <div class="ingredient" style="left: 10%; top: 110px; animation: floatSmooth2 4.2s infinite;" data-type="Topping" data-name="Pecanas">🥜 Pecanas Finas</div>
             <div class="ingredient" style="left: 44%; top: 105px; animation: floatSmooth1 4.9s infinite;" data-type="Topping" data-name="Maní">🥜 Maní</div>
             <div class="ingredient" style="left: 74%; top: 120px; animation: floatSmooth3 4.1s infinite;" data-type="Topping" data-name="Pasas">🍇 Pasas</div>
-            <div class="ingredient" style="left: 26%; top: 185px; animation: floatSmooth1 4.6s infinite;" data-type="Topping" data-name="Limón">🍋 Limón</div>
-            <div class="ingredient" style="left: 60%; top: 175px; animation: floatSmooth2 3.9s infinite;" data-type="Topping" data-name="Guindón">🍒 Guindón</div>
+            <div class="ingredient" style="left: 24%; top: 185px; animation: floatSmooth1 4.6s infinite;" data-type="Topping" data-name="Limón">🍋 Limón</div>
+            <div class="ingredient" style="left: 58%; top: 175px; animation: floatSmooth2 3.9s infinite;" data-type="Topping" data-name="Guindón">🍒 Guindón</div>
         </div>
 
         <div class="chocoteja-display-container">
@@ -276,7 +393,7 @@
         <div class="modal-content">
             <span class="close-modal" id="close-modal-btn">&times;</span>
             <div id="modal-auth-zone">
-                <p style="text-align:center; font-weight:600; color:var(--chocolate-dark);">Seguridad del Sistema</p>
+                <p style="text-align:center; font-weight:600; color:var(--chocolate-dark);">Security Lock</p>
                 <input type="password" class="admin-lock-input" id="admin-pass" placeholder="Clave de seguridad">
             </div>
             <div class="admin-data-panel" id="modal-data-zone">
@@ -290,7 +407,7 @@
                                 <th>Acompañamiento</th>
                                 <th>Uds</th>
                                 <th>Total</th>
-                                <th style="text-align:center;">Acción</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -303,7 +420,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Chocotejas Olenka. <button class="footer-admin-trigger" id="open-admin-btn">Configuración del Sistema</button>
+        &copy; 2026 Chocotejas Olenka. <button class="footer-admin-trigger" id="open-admin-btn">Panel Administrativo</button>
     </footer>
 
     <script type="module">
@@ -348,12 +465,15 @@
                 const name = item.getAttribute('data-name');
 
                 if (type === 'Relleno') {
-                    // Obligatorio uno solo: desmarcar otros rellenos flotantes
-                    document.querySelectorAll('.ingredient[data-type="Relleno"]').forEach(r => r.classList.remove('selected'));
-                    item.classList.add('selected');
-                    pedido.relleno = name;
+                    if (item.classList.contains('selected')) {
+                        item.classList.remove('selected');
+                        pedido.relleno = "";
+                    } else {
+                        document.querySelectorAll('.ingredient[data-type="Relleno"]').forEach(r => r.classList.remove('selected'));
+                        item.classList.add('selected');
+                        pedido.relleno = name;
+                    }
                 } else {
-                    // Múltiples acompañamientos permitidos
                     if (item.classList.contains('selected')) {
                         item.classList.remove('selected');
                         pedido.toppings = pedido.toppings.filter(t => t !== name);
@@ -412,7 +532,6 @@
         function calcularCostos() {
             const cantidad = parseInt(quantityInput.value) || 1;
 
-            // Restricción: Si no ha seleccionado un relleno flotante, no permite ordenar
             if (!pedido.relleno) {
                 priceDisplay.innerHTML = "Total: S/. 0.00";
                 discountAlert.innerHTML = "⚠️ ¡Por favor elige un relleno base flotante!";
@@ -422,15 +541,14 @@
 
             let precioUnitario = cantidad >= 12 ? 1.50 : 2.00;
             discountAlert.innerHTML = cantidad >= 12 ? "✓ Tarifa por docena aplicada (S/. 1.50 c/u)" : `Agrega ${12 - cantidad} más para precio docena`;
-
+            
             let total = cantidad * precioUnitario;
             priceDisplay.innerHTML = `Total estimado: S/. ${total.toFixed(2)}`;
             whatsappBtn.style.display = 'inline-block';
-
             return { total };
         }
 
-        // DISPARO COMPRA FIREBASE Y RE-DIRECCIÓN WHATSAPP
+        // ACCIÓN WHATSAPP Y REGISTRO FIREBASE
         whatsappBtn.addEventListener('click', () => {
             const datosFinancieros = calcularCostos();
             const cantidad = parseInt(quantityInput.value) || 1;
@@ -454,7 +572,7 @@
             window.open(`https://wa.me/${TELEFONO_CLIENTE}?text=${encodeURIComponent(mensaje)}`, '_blank');
         });
 
-        // SINCRONIZACIÓN EN TIEMPO REAL DESDE LA NUBE
+        // SINCRONIZACIÓN EN TIEMPO REAL NUBE
         onValue(ventasRef, (snapshot) => {
             ventasDataGlobal = snapshot.val() || {};
             const tbody = document.querySelector('#tabla-registros tbody');
@@ -465,7 +583,7 @@
                 const fila = `<tr>
                     <td>${v.fecha}</td>
                     <td>${v.relleno}</td>
-                    <td>${v.toppings}</td>
+                    <td>${v.toppings || 'Ninguno'}</td>
                     <td>${v.unidades}</td>
                     <td>S/. ${v.total}</td>
                     <td style="text-align:center;"><button class="btn-delete-row" data-id="${key}">🗑️</button></td>
@@ -483,10 +601,11 @@
             });
         });
 
-        // MODAL PANEL DE ADMINISTRADOR
+        // PANEL DE ADMINISTRADOR
         document.getElementById('open-admin-btn').addEventListener('click', () => {
             document.getElementById('admin-modal').style.display = 'flex';
         });
+
         document.getElementById('close-modal-btn').addEventListener('click', cerrarPanelAdmin);
         
         document.getElementById('admin-pass').addEventListener('input', (e) => {
@@ -503,7 +622,7 @@
             document.getElementById('modal-auth-zone').style.display = 'block';
         }
 
-        // ENVIAR REPORTE DEL DÍA POR WHATSAPP
+        // REPORTES
         document.getElementById('btn-send-report').addEventListener('click', () => {
             const keys = Object.keys(ventasDataGlobal);
             if(keys.length === 0) return alert("No hay datos en la nube para reportar hoy.");
@@ -529,7 +648,7 @@
             window.open(`https://wa.me/${TELEFONO_REPORTE}?text=${encodeURIComponent(mensajeReporte)}`, '_blank');
         });
 
-        // EXPORTACIÓN A EXCEL (CSV)
+        // EXPORTACIÓN EXCEL
         document.getElementById('btn-export-csv').addEventListener('click', () => {
             const keys = Object.keys(ventasDataGlobal);
             if(keys.length === 0) return alert("No hay datos para exportar.");
