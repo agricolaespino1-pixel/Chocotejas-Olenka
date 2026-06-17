@@ -26,7 +26,7 @@
         }
 
         /* ---------------------------------------------------- */
-        /* PANTALLA DE PORTADA / BIENVENIDA (SPLASH SCREEN) */
+        /* PANTALLA DE PORTADA INTERACTIVA (CON EL NUEVO FONDO) */
         /* ---------------------------------------------------- */
         .welcome-cover {
             position: fixed;
@@ -41,39 +41,39 @@
             align-items: center;
             text-align: center;
             cursor: pointer;
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
             padding: 20px;
             box-sizing: border-box;
 
-            /* CAMBIA LA IMAGEN DE PORTADA AQUÍ */
-            /* Puedes reemplazar este link por el de tu imagen publicitaria vertical */
-            background: linear-gradient(rgba(58, 34, 18, 0.6), rgba(58, 34, 18, 0.75)), 
-                        url('https://i.ibb.co/gZNBx10d/FB-IMG-1781703399937.jpg') no-repeat center center;
+            /* NUEVO FONDO SELECCIONADO CON DIFUMINADO PROFESIONAL */
+            background: linear-gradient(rgba(42, 22, 10, 0.45), rgba(26, 12, 5, 0.75)), 
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8h88R43oazQXhnF5W4hyvREAbXJqUg0LPylTSoymtp0gKPrVkgTa15KpQ&s=10') no-repeat center center;
             background-size: cover;
         }
 
-        /* Efecto cuando se oculta la portada */
+        /* Efecto de salida: Se desplaza hacia arriba simulando que vuela */
         .welcome-cover.hidden {
+            transform: translateY(-100%);
             opacity: 0;
             pointer-events: none;
-            transform: scale(1.05);
         }
 
         .cover-logo {
-            max-width: 150px;
+            max-width: 140px;
             border-radius: 50%;
             border: 3px solid white;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            margin-bottom: 15px;
         }
 
         .cover-title {
             font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: #ffffff;
             margin: 0;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 4px 12px rgba(0,0,0,0.7);
             font-style: italic;
+            font-weight: 400;
         }
 
         .cover-subtitle {
@@ -81,28 +81,58 @@
             color: var(--rosa-premium);
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin: 10px 0 30px 0;
+            margin: 8px 0 35px 0;
             font-weight: 600;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         .cover-btn {
-            background-color: white;
+            background: #ffffff;
             color: var(--chocolate-dark);
-            padding: 15px 35px;
+            border: none;
+            padding: 16px 45px;
             font-size: 1rem;
             font-weight: 700;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             animation: pulseEffect 2s infinite;
         }
 
         @keyframes pulseEffect {
-            0% { transform: scale(1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 30px rgba(255,255,255,0.4); }
-            100% { transform: scale(1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(255,255,255,0.45); }
+            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        }
+
+        /* ---------------------------------------------------- */
+        /* BOTÓN FLOTANTE DE FACEBOOK OFICIAL */
+        /* ---------------------------------------------------- */
+        .fb-float-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .fb-float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+        .fb-icon-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         /* ---------------------------------------------------- */
@@ -431,6 +461,10 @@
         <button class="cover-btn">✨ Diseñar Mi Chocoteja Ahora ✨</button>
     </div>
 
+    <a href="https://www.facebook.com/share/1cm4JgtWTA/" target="_blank" class="fb-float-btn" title="Síguenos en Facebook">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPTd0eBnOj847f-T8qgAtBOexiw8WClxjSRLyxpcNj0f_cPgNq5iFPj4Q&s=10" alt="Facebook Logo" class="fb-icon-img">
+    </a>
+
     <header>
         <div class="logo-container">
             <img src="https://i.ibb.co/gZNBx10d/FB-IMG-1781703399937.jpg" alt="Logo Chocotejas Olenka" class="logo-img">
@@ -555,7 +589,7 @@
         let pedido = { relleno: "", toppings: [] };
         let ventasDataGlobal = {};
 
-        // AL HACER CLIC EN LA PORTADA, SE QUITA CON EFECTO SUAVE
+        // AL HACER CLIC LA PORTADA DESAPARECE SUBIENDO ("VUELA")
         welcomeCover.addEventListener('click', () => {
             welcomeCover.classList.add('hidden');
         });
@@ -650,7 +684,7 @@
             return { total };
         }
 
-        // ACCIÓN DE PEDIDO POR WHATSAPP Y ENVÍO A FIREBASE
+        // ACCIÓN WHATSAPP
         whatsappBtn.addEventListener('click', () => {
             const datosFinancieros = calcularCostos();
             const cantidad = parseInt(quantityInput.value) || 1;
@@ -674,7 +708,7 @@
             window.open(`https://wa.me/${TELEFONO_CLIENTE}?text=${encodeURIComponent(mensaje)}`, '_blank');
         });
 
-        // ESCUCHA FIREBASE Y CARGA MÓVIL EN TIEMPO REAL
+        // SÌNCRONIZACIÓN FIREBASE REALTIME
         onValue(ventasRef, (snapshot) => {
             ventasDataGlobal = snapshot.val() || {};
             const tbody = document.querySelector('#tabla-registros tbody');
@@ -704,7 +738,7 @@
             });
         });
 
-        // PANEL ADMINISTRATIVO
+        // PANEL DE ADMINISTRADOR
         document.getElementById('open-admin-btn').addEventListener('click', () => {
             document.getElementById('admin-modal').style.display = 'flex';
         });
@@ -725,7 +759,7 @@
             document.getElementById('modal-auth-zone').style.display = 'block';
         }
 
-        // REPORTE DIARIO WHATSAPP
+        // REPORTES WHATSAPP
         document.getElementById('btn-send-report').addEventListener('click', () => {
             const keys = Object.keys(ventasDataGlobal);
             if(keys.length === 0) return alert("No hay datos en la nube para reportar hoy.");
