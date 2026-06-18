@@ -146,17 +146,32 @@
             background-size: cover;
         }
         
+        /* MODIFICADO: Header ahora tiene posición relativa y overflow para soportar el fondo difuminado */
         header {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.88);
             padding: 25px 20px;
             text-align: center;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid rgba(207, 160, 155, 0.3);
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        /* NUEVO: Capa de fondo difuminada para el cuadro blanco del logo */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA4L3Jhd3BpeGVsX29mZmljZV8yMl9waG90b2dyYXBoX29mX2FfZGFya19jaG9jb2xhdGVfYmFyX3dpdGhfY2hvY18yZjJiZTA3Mi1hYmMxLTQ1OTAtODMxNC01ZWZiMWE1MjA1ZDYucG5n.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(5px);
+            opacity: 0.30; /* Suave opacidad para mantener la legibilidad del texto */
+            z-index: -1;
         }
         
         .logo-container {
+            position: relative;
             max-width: 130px;
             margin: 0 auto 12px auto;
             display: flex;
@@ -191,6 +206,7 @@
             opacity: 0.8;
         }
         .story-badge {
+            position: relative;
             background-color: #ffffff;
             color: var(--chocolate-light);
             display: inline-block;
@@ -214,7 +230,7 @@
         /* DISEÑO DE PRECIOS DETALLADO CON TEXTURA BARRA DE CHOCOLATE DE FONDO */
         .pricing-card {
             background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-                        url('https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA4L3Jhd3BpeGVsX29mZmljZV8yMl9waG90b2dyYXBoX29mX2FfZGFya19jaG9jb2xhdGVfYmFyX3dpdGhfY2hvY18yZjJiZTA3Mi1hYmMxLTQ1OTAtODMxNC01ZWZiMWE1MjA1ZDYucG5n.png') center center;
+                        url('https://i.ytimg.com/vi/zn-2pWInbU4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCZmtK2VJYBhp-FC6LT5-wR4BXACA') center center;
             background-size: contain;
             border-radius: 16px;
             padding: 18px 30px;
