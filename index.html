@@ -603,7 +603,7 @@
         </div>
 
         <div style="min-height: 60px;">
-            <button class="whatsapp-btn" id="whatsapp-btn">✉️ <b>Confirmar Diseño y Pedir por WhatsAppb<b></button>
+            <button class="whatsapp-btn" id="whatsapp-btn">✉️ <b>Confirmar Diseño y Pedir por WhatsApp<b></button>
         </div>
     </div>
 
@@ -751,7 +751,13 @@
         }
 
         function calcularCostos() {
-            const cantidad = parseInt(quantityInput.value) || 1;
+            let cantidad = parseInt(quantityInput.value) || 1;
+
+            if (cantidad > 24) {
+                alert("No tenemos stock en este momento, modifique su unidades de chocotejas");
+                quantityInput.value = 24;
+                cantidad = 24;
+            }
 
             if (!pedido.relleno) {
                 priceDisplay.innerHTML = "Total: S/. 0.00";
